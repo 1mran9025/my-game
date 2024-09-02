@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #111;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+    border: 5px solid #39ff14; /* Neon green outline */
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6); /* Neon glow effect */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+    border: 2px solid transparent; /* For neon border effect */
+    border-radius: 5px;
+}
+
+.cell:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.cell:hover:before {
+    opacity: 0.3;
+}
+
+.cell.X {
+    color: #39ff14; /* Neon green */
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+}
+
+.cell.O {
+    color: #ff073a; /* Neon pink */
+    text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+}
+
+#status {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #ff073a; /* Neon pink */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 7, 58, 0.7); /* Neon glow effect */
+}
+
+button:hover {
+    background-color: #ff1b53;
+    box-shadow: 0 0 20px rgba(255, 27, 83, 0.8);
+}
+
+#footer {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #bbb;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14; /* Neon glow effect */
+}
